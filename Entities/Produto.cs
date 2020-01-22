@@ -15,9 +15,9 @@ namespace ExercicioPordutos.Entities
             Preco = preco;
         }
 
-        public string TagPrice()
+        public virtual string TagPrice()
         {
-            return Nome + "R$ " + Preco;  
+            return Nome + "R$ " + Preco.ToString("F2");  
         }
     }
 }

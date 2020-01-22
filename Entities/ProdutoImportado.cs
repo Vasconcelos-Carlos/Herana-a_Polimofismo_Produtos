@@ -13,9 +13,15 @@ namespace ExercicioPordutos.Entities
             TaxaAlfandegária = taxaAlfandegária;
         }
 
-        public string PriceTag()
+
+        public double PrecoTotal()
         {
-            return $"{Nome} R$ {Preco} (Taxa Alfandegária R$ {TaxaAlfandegária})";
+            return Preco + TaxaAlfandegária;
         }
+        public override string TagPrice()
+        {
+            return $"{Nome} R$ {PrecoTotal().ToString("F2")}  (Taxa Alfandegária R$ {TaxaAlfandegária.ToString("F2")})";
+        }
+     
     }
 }

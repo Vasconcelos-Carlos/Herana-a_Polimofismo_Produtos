@@ -11,9 +11,11 @@ namespace ExercicioPordutos.Entities
             Fabricaçao = fabricaçao;
         }
 
-        public string PriceTag()
+        public override string TagPrice()
         {
-            return Nome + " (usado) R$ " + Preco + $"(Data de fabricação {Fabricaçao})";
+            
+            return Nome + " (usado) R$ " + Preco.ToString("F2") + $"(Data de fabricação {Fabricaçao.ToString("dd/MM/yyyy")})";
         }
+       
     }
 }
